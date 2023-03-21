@@ -26,7 +26,7 @@
             <!-- Creo un form -->
             <form action="" method="GET" class="text-center py-3">
                 <label for="length">Lunghezza Password:</label>
-                <input type="number" name="length" min="1" max="50">
+                <input type="number" name="length" min="8" max="16">
                 <input type="submit" value="Genera Password">
             </form>
         </div>
