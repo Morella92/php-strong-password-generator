@@ -34,19 +34,22 @@
     </div>
     
     <?php 
-    
+
         // Funzione per generare una password casuale
         function generate_password($length) {
-            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!$%&*()_-,.?";
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
             $password = "";
         
             for ($i = 0; $i < $length; $i++) {
                 $random_password = random_int(0, strlen($chars) - 1);
-                
+                $password .= $chars[$random_password] 
             }
         
+            return $password
         }
+        
     
+        
     ?>
 </body>
 </html>
