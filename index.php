@@ -41,15 +41,31 @@
             $password = "";
         
             for ($i = 0; $i < $length; $i++) {
-                $random_password = random_int(0, strlen($chars) - 1);
-                $password .= $chars[$random_password] 
+                $random_index = random_int(0, strlen($chars) - 1);
+                $password .= $chars[$random_index];
             }
         
-            return $password
+            return $password;
         }
+
+        // Verifico se è stata fornita una lunghezza
+
+        $length = $_GET['length'];
         
-    
-        
+
+        if(isset($length)) {
+
+            //Genero la password casuale
+            $password = generate_password($length);
+            $message = "La tua password casuale lunga " . $length . " caratteri è: " . $password;
+            
+            ?>
+
+            <!-- Stampo la password -->
+            <p class="fs-5 ms-5 text-white"> <?php echo $message ?></p>
+            <?php
+        }
+
     ?>
 </body>
 </html>
